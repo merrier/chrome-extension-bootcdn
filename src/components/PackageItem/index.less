@@ -1,0 +1,49 @@
+.package-item-container{
+    .package-main{
+        display: block;
+        position: relative;
+        padding: 8px 10px;
+        height: 40px;
+        color: #555;
+        background-color: #fff;
+        font-size: 14px;
+
+        &:hover{
+            text-decoration: none;
+            background-color: #f5f5f5;
+        }
+
+        .package-btn{
+            display: inline-block;
+            vertical-align: middle;
+            color: #aaa;
+            width: 10%;
+
+            .fa-minus-square-o, .fa-plus-square-o{
+                color: #aaa;
+                font-size: 1.2em;
+            }
+        }
+          
+        .package-name{
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            width: 50%;
+            font-weight: 700;
+            font-size: 1.1em; 
+        }
+        
+        .package-star{
+            display: inline-block;
+            vertical-align: middle;
+            color: #aaa;
+        }
+    }
+    .package-description{
+        padding: 8px 10px;
+        background: #fbfbfb;
+        word-break: break-all;
+        transition: height ease-in-out 2s;
+    }
+}
