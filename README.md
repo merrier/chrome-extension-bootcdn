@@ -7,14 +7,14 @@ BootCDN(http://www.bootcdn.cn/) 的Chrome扩展程序.
 ### 首页
 
 <div align="center">
-<img src="./images/home.png" height="250"/>
+<img src="./images/home.png" height="280"/>
 </div>
 
 
 ### 详情页
 
 <div align="center">
-<img src="./images/detail.png" height="250"/>
+<img src="./images/detail.png" height="280"/>
 </div>
 
 
