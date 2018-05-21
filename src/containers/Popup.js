@@ -23,6 +23,13 @@ class Popup extends Component {
     })
   }
 
+  returnToHome = () => {
+    this.setState({
+      isHome: true,
+      packageName: '',
+    })
+  }
+
   render() {
 
     const { packageName } = this.state;
@@ -31,7 +38,7 @@ class Popup extends Component {
         <App>
           { this.state.isHome
             ? <PopupHome onPackageClick={this.onPackageClick} />
-            : <PopupDetail packageName={packageName} />
+            : <PopupDetail packageName={packageName} returnToHome={this.returnToHome}/>
           }   
         </App>
     );

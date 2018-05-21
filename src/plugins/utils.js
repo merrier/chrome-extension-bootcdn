@@ -1,4 +1,5 @@
-const API_DOMAIN_NAME = 'https://api.bootcdn.cn'
+import {showToast} from 'components/Toast';
+const API_DOMAIN_NAME = 'https://api.bootcdn.cn';
 
 export function request(path, body, isPost) {
     let url = API_DOMAIN_NAME + path;
@@ -16,7 +17,7 @@ export function request(path, body, isPost) {
     return fetch(url, options)
       .then(res => res.json())
       .catch(err => {
-        // showToast('数据异常，请检查网络设置')
-        console.log('数据异常，请检查网络设置')
+        showToast('数据异常，请检查网络设置')
+        // console.log('数据异常，请检查网络设置')
       })
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { request } from "plugins/utils";
 
 import { showToast } from "components/Toast";
+import HomeHeader from "components/HomeHeader";
 import PackageItem from "components/PackageItem";
 
 import "./index.less";
@@ -10,24 +11,36 @@ class PopupHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      packageList: []
+      packages: [],
+      packageList: [],
     };
   }
 
   getContent = async path => {
     const json = await request("/libraries.min.json");
-    // console.log("json", json);
     if (json) {
       this.setState({
+        packages: json,
         packageList: json,
       }, () => {
-        showToast("加载成功:)");
+        showToast("加载成功");
       })
     }
   };
 
-  componentWillMount() {
-    this.getContent();
+  componentDidMount() {
+    setTimeout(() => {
+      this.getContent();
+    }, 0);
+  }
+
+  onSearchChange = (val) => {
+    const packages = this.state.packages;
+    this.setState({
+      packageList: packages.filter((item)=> {
+        return item[0].indexOf(val) !== -1;
+      })
+    })
   }
 
   render() {
@@ -36,32 +49,19 @@ class PopupHome extends Component {
 
     return (
       <div className="popup-home">
-        <div className="header">
-          <h1>BootCDN</h1>
-
-          <div className="search-wrapper" role="search">
-            <input
-              className="search"
-              placeholder="搜索开源库，例如：jquery"
-              tabIndex="0"
-            />
-            <i className="fa fa-search" />
-          </div>
-        </div>
+        <HomeHeader onSearchChange={this.onSearchChange}/>
 
         <div className="container">
-          {packageList.length !== 0 ? (
-            <ul className="package-list" id="package-list">
-              { packageList.map((item, index) => {
-                return(
-                  <li key={item[0]} className="package-item">
-                    <PackageItem info={item} onPackageClick={onPackageClick}/>
-                  </li>
-                );
-              })
-              }
-            </ul>
-          ) : null}
+          <ul className="package-list" id="package-list">
+            { packageList.map((item, index) => {
+              return(
+                <li key={item[0]} className="package-item">
+                  <PackageItem info={item} onPackageClick={onPackageClick}/>
+                </li>
+              );
+            })
+            }
+          </ul>
         </div>
       </div>
     );

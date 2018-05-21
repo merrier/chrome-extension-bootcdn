@@ -1,0 +1,39 @@
+.url-item-container{
+
+    .url{
+        padding: 10px;
+        border-left: 3px solid #ecf0f1;
+    }
+    .operation-box{
+        display: none;
+        line-height: 25px;
+        border-top: 1px solid #ecf0f1;
+        border-left: 3px solid #ecf0f1;
+        transition: all 2s ease-in-out;
+
+        &.active{
+            display: block;
+        }
+        .btn{
+            display: inline-block;
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+
+            .fa{
+                font-size: 1.1em;
+            }
+            &:hover{
+                color: #fff;
+                background-color: #27ae60;
+            }
+        }
+        .btn-copy-link{
+            width: 60%;
+            border-right: 1px solid #ecf0f1;
+        }
+        .btn-copy-url{
+            width: 40%;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.popup-home{
+
+    .header{
+        position: relative;
+        padding: 10px;
+        text-align: center;
+        background: #27ae60;
+        color: #fff;
+
+        h1{
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .search-wrapper{
+            position: relative;
+
+            .search {
+                display: block;
+                width: 100%;
+                padding: 8px 20px;
+                box-shadow: none;
+                font-size: 14px;
+                border-radius: 0;
+                text-align: center;
+                color: #555;
+                background: #fff;
+                border: 1px solid transparent;
+                transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
+                &:focus{
+                    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+                }
+            }
+            .fa-search {
+                position: absolute;
+                right: 8px;
+                top: 10px;
+                color: #a3a3a4;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .container{
+        padding: 10px;
+
+        .package-list{
+            height: 411px;
+            overflow-y: scroll;
+        }
+
+        .package-item{
+            border: 1px solid #ecf0f1;  
+            margin-bottom: -1px;
+        }
+    }
+}
