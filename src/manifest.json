@@ -8,7 +8,9 @@
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_icon": "images/icon-300.png"
+    "default_icon": {
+      "128":"images/icon-300.png"
+    }
   },
   "icons": {
     "128": "images/icon-300.png"
