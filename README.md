@@ -35,7 +35,7 @@ npm run build
 ## 遇到的问题
 
 * reqwest不能用，会报“options 403”错误，但是fetch就可以用，不知道为什么？
-* 生产环境生成的文件有问题，暂时不知道原因
+* 生产环境webpack不能用optimization配置，暂时不知道原因
 
 ## 开源协议
 
