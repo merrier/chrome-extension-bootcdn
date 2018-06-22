@@ -138,22 +138,23 @@ module.exports = (env, argv) => {
 
   // production environment
   if (mode === "production") {
-    config = Object.assign({}, commonConfig, {
-      optimization: {
-        runtimeChunk: {
-          name: "manifest"
-        },
-        splitChunks: {
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: "vendor",
-              chunks: "all"
-            }
-          }
-        }
-      }
-    });
+    config = Object.assign({}, commonConfig);
+    // config = Object.assign({}, commonConfig, {
+    //   optimization: {
+    //     runtimeChunk: {
+    //       name: "manifest"
+    //     },
+    //     splitChunks: {
+    //       cacheGroups: {
+    //         vendor: {
+    //           test: /[\\/]node_modules[\\/]/,
+    //           name: "vendor",
+    //           chunks: "all"
+    //         }
+    //       }
+    //     }
+    //   }
+    // });
     config.plugins = config.plugins.concat([extractCSS, extractLESS]);
     config.module.rules = config.module.rules.concat([
       {
